@@ -64,6 +64,16 @@ docker run --restart always -v /srv/dav:/var/lib/dav \
     -e SSL_CERT=selfsigned --publish 443:443 -d bytemark/webdav
 
 ```
+---
+
+```
+docker run --name webdav -v /srv/dav:/var/lib/dav \
+    -e AUTH_TYPE=Basic -e USERNAME=test -e PASSWORD=test \
+    -e SSL_CERT=selfsigned --publish 443:443 -d bytemark/webdav
+
+```
+
+---
 
 If you bind mount a certificate chain to `/cert.pem` and a private key to `/privkey.pem`, the container will use that instead!
 
